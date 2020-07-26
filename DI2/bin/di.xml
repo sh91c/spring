@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="man" class="com.spring.di.test.Man" />
+	<bean id="woman" class="com.spring.di.test.Woman" />
+	
+	<bean id="cafe2" class="com.spring.di.test.Cafe2" >
+		<!-- setHuman 정의 레퍼런스 = ID 가 human-->
+		<property name="human" ref="human" />  
+	</bean>
+	<!-- ref가 human을 참조하겠다는 말 -->
+	<bean id="human" class="com.spring.di.test.Man" />
+	
+</beans>
